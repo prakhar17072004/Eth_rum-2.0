@@ -1,4 +1,3 @@
-
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
 /**
@@ -13,775 +12,825 @@ import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
  * } as const;
  */
 const externalContracts = {
-    17000: {
-        TokenA:{
+
+    17000:{
+        SideBitV6:{
+            address:"0xF1caaa7570EEbB4E6aefE9C2Db3E918f7a65192d",
+            abi:
+                [
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "cancelSideBet",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "enum TeamIndex",
+                                "name": "index",
+                                "type": "uint8"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "deposit",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "token",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "SafeERC20FailedOperation",
+                        "type": "error"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "amount",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "enum TeamIndex",
+                                "name": "teamIndex",
+                                "type": "uint8"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "address",
+                                "name": "from",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "address",
+                                "name": "token",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "Deposited",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "startIndex",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "endIndex",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "distributeReward",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "endSaleNow",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "teamNameA",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "string",
+                                "name": "teamNameB",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "standardToken",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "saleStart",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "saleEnd",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "initializeSideBet",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "address",
+                                "name": "wallet",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "NewUniqueWallet",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "ownerCut",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "OwnerCutTransferred",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "ownerAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "OwnershipRenounced",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "previousOwner",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": true,
+                                "internalType": "address",
+                                "name": "newOwner",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "OwnershipTransferred",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256[]",
+                                "name": "userRefunds",
+                                "type": "uint256[]"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "address[]",
+                                "name": "users",
+                                "type": "address[]"
+                            }
+                        ],
+                        "name": "RefundDistributed",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "startIndex",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "endIndex",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "refundTokens",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256[]",
+                                "name": "userRewards",
+                                "type": "uint256[]"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "address[]",
+                                "name": "winningUsers",
+                                "type": "address[]"
+                            }
+                        ],
+                        "name": "RewardDistributed",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "enum TeamIndex",
+                                "name": "index",
+                                "type": "uint8"
+                            }
+                        ],
+                        "name": "selectWinningTeam",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "SideBetCancelled",
+                        "type": "event"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "teamA",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "teamB",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "address",
+                                "name": "standardToken",
+                                "type": "address"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "startTime",
+                                "type": "uint256"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "uint256",
+                                "name": "endTime",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "SideBetEventInitialized",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "transferOwnerCut",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "newOwner",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "transferOwnership",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "start",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "end",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "updateSale",
+                        "outputs": [],
+                        "stateMutability": "nonpayable",
+                        "type": "function"
+                    },
+                    {
+                        "anonymous": false,
+                        "inputs": [
+                            {
+                                "indexed": false,
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "indexed": false,
+                                "internalType": "enum TeamIndex",
+                                "name": "teamIndex",
+                                "type": "uint8"
+                            }
+                        ],
+                        "name": "WinningTeamSelected",
+                        "type": "event"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "calculateTotalRewardAndOwnerCut",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "totalReward",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "ownerCut",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "maxCount",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getAllUniqueWallets",
+                        "outputs": [
+                            {
+                                "internalType": "address[]",
+                                "name": "",
+                                "type": "address[]"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "getSideBetData",
+                        "outputs": [
+                            {
+                                "internalType": "string[2]",
+                                "name": "teamNames",
+                                "type": "string[2]"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "standardTokenAddress",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "winnerSet",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "enum TeamIndex",
+                                "name": "winningIndex",
+                                "type": "uint8"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "ownerCutWithdrawn",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "bool",
+                                "name": "cancelled",
+                                "type": "bool"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "maxUsers",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getSideBetDepositData",
+                        "outputs": [
+                            {
+                                "internalType": "address[]",
+                                "name": "allUsers",
+                                "type": "address[]"
+                            },
+                            {
+                                "internalType": "address[][2]",
+                                "name": "eventUsers",
+                                "type": "address[][2]"
+                            },
+                            {
+                                "internalType": "uint256[][2]",
+                                "name": "userTokens",
+                                "type": "uint256[][2]"
+                            },
+                            {
+                                "internalType": "uint256[2]",
+                                "name": "totalTokensDeposited",
+                                "type": "uint256[2]"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "tokenAddress",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getTotalTokenSpent",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "getUniqueWalletCount",
+                        "outputs": [
+                            {
+                                "internalType": "uint256",
+                                "name": "",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "user",
+                                "type": "address"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "maxSideBets",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getUserSideBetData",
+                        "outputs": [
+                            {
+                                "components": [
+                                    {
+                                        "internalType": "string",
+                                        "name": "eventCode",
+                                        "type": "string"
+                                    },
+                                    {
+                                        "internalType": "address",
+                                        "name": "tokenAddress",
+                                        "type": "address"
+                                    },
+                                    {
+                                        "internalType": "string[2]",
+                                        "name": "teamNames",
+                                        "type": "string[2]"
+                                    },
+                                    {
+                                        "internalType": "bool",
+                                        "name": "winnerSet",
+                                        "type": "bool"
+                                    },
+                                    {
+                                        "internalType": "enum TeamIndex",
+                                        "name": "winningIndex",
+                                        "type": "uint8"
+                                    },
+                                    {
+                                        "internalType": "uint256[2]",
+                                        "name": "userTokensDeposited",
+                                        "type": "uint256[2]"
+                                    },
+                                    {
+                                        "internalType": "uint256",
+                                        "name": "userReward",
+                                        "type": "uint256"
+                                    }
+                                ],
+                                "internalType": "struct UserSideBetData[]",
+                                "name": "",
+                                "type": "tuple[]"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "address",
+                                "name": "user",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserSideBets",
+                        "outputs": [
+                            {
+                                "internalType": "bytes32[]",
+                                "name": "",
+                                "type": "bytes32[]"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "startIndex",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "endIndex",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getUsersRewardsClaimedStatuses",
+                        "outputs": [
+                            {
+                                "internalType": "address[]",
+                                "name": "users",
+                                "type": "address[]"
+                            },
+                            {
+                                "internalType": "bool[]",
+                                "name": "usersRewardsClaimed",
+                                "type": "bool[]"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "address",
+                                "name": "user",
+                                "type": "address"
+                            }
+                        ],
+                        "name": "getUserTokensDeposited",
+                        "outputs": [
+                            {
+                                "internalType": "uint256[2]",
+                                "name": "",
+                                "type": "uint256[2]"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "startIndex",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "endIndex",
+                                "type": "uint256"
+                            }
+                        ],
+                        "name": "getWinningUsersAndUserRewards",
+                        "outputs": [
+                            {
+                                "internalType": "address[]",
+                                "name": "winningUsers",
+                                "type": "address[]"
+                            },
+                            {
+                                "internalType": "uint256[]",
+                                "name": "userRewards",
+                                "type": "uint256[]"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [
+                            {
+                                "internalType": "string",
+                                "name": "eventCode",
+                                "type": "string"
+                            }
+                        ],
+                        "name": "isSaleOn",
+                        "outputs": [
+                            {
+                                "internalType": "bool",
+                                "name": "saleActive",
+                                "type": "bool"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "saleStart",
+                                "type": "uint256"
+                            },
+                            {
+                                "internalType": "uint256",
+                                "name": "saleEnd",
+                                "type": "uint256"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    },
+                    {
+                        "inputs": [],
+                        "name": "owner",
+                        "outputs": [
+                            {
+                                "internalType": "address",
+                                "name": "",
+                                "type": "address"
+                            }
+                        ],
+                        "stateMutability": "view",
+                        "type": "function"
+                    }
+                ]
             
-            address:"0x487697BA791CD4dEd7A9C6769915c55E71bECEA0",
-            abi:[
-              {
-                "inputs": [],
-                "stateMutability": "nonpayable",
-                "type": "constructor"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "allowance",
-                    "type": "uint256"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "needed",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "ERC20InsufficientAllowance",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "sender",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "balance",
-                    "type": "uint256"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "needed",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "ERC20InsufficientBalance",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "approver",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidApprover",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "receiver",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidReceiver",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "sender",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidSender",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidSpender",
-                "type": "error"
-              },
-              {
-                "anonymous": false,
-                "inputs": [
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "Approval",
-                "type": "event"
-              },
-              {
-                "anonymous": false,
-                "inputs": [
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "Transfer",
-                "type": "event"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  }
-                ],
-                "name": "allowance",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "approve",
-                "outputs": [
-                  {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                  }
-                ],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "account",
-                    "type": "address"
-                  }
-                ],
-                "name": "balanceOf",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "decimals",
-                "outputs": [
-                  {
-                    "internalType": "uint8",
-                    "name": "",
-                    "type": "uint8"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "name",
-                "outputs": [
-                  {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "symbol",
-                "outputs": [
-                  {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "totalSupply",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "transfer",
-                "outputs": [
-                  {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                  }
-                ],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "transferFrom",
-                "outputs": [
-                  {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                  }
-                ],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              }
-            ]          
-        },
-        TokenB:{
-            address:"0xe5806B516d9609F34C07a57dE45bEE5E168Af6A9",
-            abi:[
-              {
-                "inputs": [],
-                "stateMutability": "nonpayable",
-                "type": "constructor"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "allowance",
-                    "type": "uint256"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "needed",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "ERC20InsufficientAllowance",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "sender",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "balance",
-                    "type": "uint256"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "needed",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "ERC20InsufficientBalance",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "approver",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidApprover",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "receiver",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidReceiver",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "sender",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidSender",
-                "type": "error"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  }
-                ],
-                "name": "ERC20InvalidSpender",
-                "type": "error"
-              },
-              {
-                "anonymous": false,
-                "inputs": [
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "Approval",
-                "type": "event"
-              },
-              {
-                "anonymous": false,
-                "inputs": [
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                  },
-                  {
-                    "indexed": false,
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "Transfer",
-                "type": "event"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "owner",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  }
-                ],
-                "name": "allowance",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "spender",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "approve",
-                "outputs": [
-                  {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                  }
-                ],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "account",
-                    "type": "address"
-                  }
-                ],
-                "name": "balanceOf",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "decimals",
-                "outputs": [
-                  {
-                    "internalType": "uint8",
-                    "name": "",
-                    "type": "uint8"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "name",
-                "outputs": [
-                  {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "symbol",
-                "outputs": [
-                  {
-                    "internalType": "string",
-                    "name": "",
-                    "type": "string"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "totalSupply",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "transfer",
-                "outputs": [
-                  {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                  }
-                ],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "address",
-                    "name": "from",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "address",
-                    "name": "to",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "value",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "transferFrom",
-                "outputs": [
-                  {
-                    "internalType": "bool",
-                    "name": "",
-                    "type": "bool"
-                  }
-                ],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              }
-            ],
-        },
-        TokenSwap:{
-            address:"0xDc30311cD698e8D625444A43b5aCe08aF2C9FAFB",
-            abi:[
-              {
-                "inputs": [
-                  {
-                    "internalType": "contract IERC20",
-                    "name": "_token1",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "contract IERC20",
-                    "name": "_token2",
-                    "type": "address"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "_rate1To2",
-                    "type": "uint256"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "_rate2To1",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "nonpayable",
-                "type": "constructor"
-              },
-              {
-                "inputs": [],
-                "name": "exchangeRateToken1ToToken2",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "exchangeRateToken2ToToken1",
-                "outputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "",
-                    "type": "uint256"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "amountToken1",
-                    "type": "uint256"
-                  },
-                  {
-                    "internalType": "uint256",
-                    "name": "amountToken2",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "fundContract",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "swapToken1ForToken2",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              },
-              {
-                "inputs": [
-                  {
-                    "internalType": "uint256",
-                    "name": "amount",
-                    "type": "uint256"
-                  }
-                ],
-                "name": "swapToken2ForToken1",
-                "outputs": [],
-                "stateMutability": "nonpayable",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "token1",
-                "outputs": [
-                  {
-                    "internalType": "contract IERC20",
-                    "name": "",
-                    "type": "address"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              },
-              {
-                "inputs": [],
-                "name": "token2",
-                "outputs": [
-                  {
-                    "internalType": "contract IERC20",
-                    "name": "",
-                    "type": "address"
-                  }
-                ],
-                "stateMutability": "view",
-                "type": "function"
-              }
-            ],
         }
-    },
-  
-
-
+    }
 } as const;
 
 export default externalContracts satisfies GenericContractsDeclaration;

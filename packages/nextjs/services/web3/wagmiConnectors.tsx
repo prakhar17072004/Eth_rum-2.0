@@ -37,7 +37,7 @@ export const wagmiConnectors = connectorsForWallets(
   ],
 
   {
-    appName: "speedrunethereum",
+    appName: "scaffold-eth-2",
     projectId: scaffoldConfig.walletConnectProjectId,
   },
 );
